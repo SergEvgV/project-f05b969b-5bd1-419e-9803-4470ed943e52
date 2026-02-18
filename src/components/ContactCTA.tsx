@@ -9,7 +9,7 @@ const ContactCTA = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto text-center rounded-3xl border border-primary/20 bg-card p-12 glow-green"
+          className="max-w-3xl mx-auto text-center rounded-3xl border border-primary/15 bg-card p-12 shadow-lg"
         >
           <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
             <MessageCircle className="w-8 h-8 text-primary" />
@@ -25,7 +25,7 @@ const ContactCTA = () => {
               href="https://t.me/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-bold text-lg hover:scale-105 transition-transform"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-bold text-lg hover:scale-105 transition-transform glow-primary"
             >
               Написать в Telegram
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
