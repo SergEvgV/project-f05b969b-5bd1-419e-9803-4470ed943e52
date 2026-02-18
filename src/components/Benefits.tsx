@@ -9,6 +9,7 @@ const benefits = [
       "Сайты с хорошей SEO-оптимизацией",
       "Сайты в ТОП-30 выдачи Яндекса",
       "Молодые сайты в ТОП-100",
+      "Сайт должен соответствовать интенту запроса",
     ],
   },
   {
@@ -16,8 +17,9 @@ const benefits = [
     title: "Безопасность",
     items: [
       "Не отображается в Яндекс.Метрике",
-      "100% безопасная технология",
+      "100% безопасная приватная технология",
       "Гарантия возврата средств",
+      "60+ положительных отзывов",
     ],
   },
   {
@@ -26,14 +28,15 @@ const benefits = [
     items: [
       "URL сайта и регион продвижения",
       "Список ключевых запросов в ТОП-30",
-      "Доступ к Яндекс.Метрике (желательно)",
+      "Доступ к Яндекс.Метрике и Вебмастеру",
     ],
   },
 ];
 
 const niches = [
-  "Коттеджные посёлки", "Кухни на заказ", "Межкомнатные двери",
-  "Строительство", "Автозапчасти", "Туризм", "Медицина", "Юридические услуги",
+  "Металлопрокат", "Рекламные агентства", "Септики", "Сертификация",
+  "Электроинструмент", "Автоподбор", "Кухни на заказ", "Туризм",
+  "Строительство", "Медицина", "Юридические услуги",
 ];
 
 const Benefits = () => {
@@ -59,7 +62,7 @@ const Benefits = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="rounded-2xl border border-border bg-card/50 p-6"
+              className="rounded-2xl border border-border bg-card shadow-sm p-6"
             >
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <b.icon className="w-5 h-5 text-primary" />
@@ -77,7 +80,6 @@ const Benefits = () => {
           ))}
         </div>
 
-        {/* Niche tags */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -87,7 +89,7 @@ const Benefits = () => {
           {niches.map((n, i) => (
             <span
               key={i}
-              className="px-4 py-2 rounded-full border border-border bg-secondary text-sm text-secondary-foreground"
+              className="px-4 py-2 rounded-full border border-border bg-card text-sm text-muted-foreground shadow-sm"
             >
               {n}
             </span>

@@ -5,7 +5,7 @@ const steps = [
   {
     icon: Search,
     title: "Анализ запросов",
-    description: "Подбираем ключевые фразы вашего сайта в ТОП-30 Яндекса — от 50 до 1000 фраз",
+    description: "Подбираем ключевые фразы вашего сайта в ТОП-30 Яндекса — от 100 до 10 000 фраз",
   },
   {
     icon: MousePointerClick,
@@ -15,7 +15,7 @@ const steps = [
   {
     icon: BarChart3,
     title: "Глубина взаимодействия",
-    description: "Просмотр до 5 страниц, время на сайте от 30 сек до 4 минут, мобильный и десктопный трафик",
+    description: "Просмотр до 5 страниц, время на сайте до 4 минут, мобильный и десктопный трафик",
   },
   {
     icon: TrendingUp,
@@ -51,9 +51,9 @@ const HowItWorks = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group relative rounded-2xl border border-border bg-card/50 p-6 hover:glow-border transition-all duration-300"
+              className="group relative rounded-2xl border border-border bg-card shadow-sm p-6 hover:shadow-md transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
                 <step.icon className="w-6 h-6 text-primary" />
               </div>
               <div className="font-mono text-xs text-muted-foreground mb-2">0{i + 1}</div>
@@ -63,12 +63,11 @@ const HowItWorks = () => {
           ))}
         </div>
 
-        {/* Important note */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 rounded-2xl border border-primary/20 bg-primary/5 p-6 max-w-2xl mx-auto text-center"
+          className="mt-12 rounded-2xl border border-primary/15 bg-primary/5 p-6 max-w-2xl mx-auto text-center"
         >
           <p className="text-sm text-muted-foreground">
             <span className="text-primary font-semibold">Важно:</span> В Яндекс.Метрике переходы не отображаются, 

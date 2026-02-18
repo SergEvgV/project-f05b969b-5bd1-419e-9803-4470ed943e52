@@ -1,20 +1,20 @@
 import { motion } from "framer-motion";
-import { Check, Zap, Star, Crown } from "lucide-react";
+import { Zap, Star, Crown } from "lucide-react";
 
 const plans = [
   {
     name: "Эконом",
-    price: "8 000",
+    price: "11 000",
     icon: Zap,
-    description: "Быстро-ТОП до 1000 поисковых запросов",
+    description: "Быстро-ТОП до 3000 поисковых запросов",
     duration: "7 дней",
     features: [
-      { label: "Поисковые запросы", value: "до 1 000" },
-      { label: "Посетители", value: "2 800" },
-      { label: "Точки входа", value: "1" },
+      { label: "Поисковые запросы", value: "до 3 000" },
+      { label: "Посетители", value: "5 000" },
+      { label: "Точки входа", value: "2" },
       { label: "Глубина просмотра", value: "2 страницы" },
       { label: "Мобильный трафик", value: "Да" },
-      { label: "Время на сайте", value: "1 мин" },
+      { label: "Время на сайте", value: "2 мин" },
       { label: "Подбор ключевых фраз", value: "Да" },
       { label: "Геотаргетинг", value: "Да" },
     ],
@@ -22,17 +22,17 @@ const plans = [
   },
   {
     name: "Стандарт",
-    price: "15 000",
+    price: "21 000",
     icon: Star,
-    description: "Быстро-ТОП до 2500 поисковых запросов",
+    description: "Быстро-ТОП до 5000 поисковых запросов",
     duration: "15 дней",
     features: [
-      { label: "Поисковые запросы", value: "до 2 500" },
-      { label: "Посетители", value: "6 000" },
-      { label: "Точки входа", value: "2" },
+      { label: "Поисковые запросы", value: "до 5 000" },
+      { label: "Посетители", value: "14 000" },
+      { label: "Точки входа", value: "3" },
       { label: "Глубина просмотра", value: "3 страницы" },
       { label: "Мобильный трафик", value: "Да" },
-      { label: "Время на сайте", value: "1 мин" },
+      { label: "Время на сайте", value: "2 мин" },
       { label: "Подбор ключевых фраз", value: "Да" },
       { label: "Геотаргетинг", value: "Да" },
     ],
@@ -40,17 +40,17 @@ const plans = [
   },
   {
     name: "Бизнес",
-    price: "30 000",
+    price: "40 000",
     icon: Crown,
-    description: "Быстро-ТОП до 5000 поисковых запросов",
+    description: "Быстро-ТОП до 10000 поисковых запросов",
     duration: "30 дней",
     features: [
-      { label: "Поисковые запросы", value: "до 5 000" },
-      { label: "Посетители", value: "13 000" },
-      { label: "Точки входа", value: "3" },
+      { label: "Поисковые запросы", value: "до 10 000" },
+      { label: "Посетители", value: "25 000" },
+      { label: "Точки входа", value: "4" },
       { label: "Глубина просмотра", value: "5 страниц" },
       { label: "Мобильный трафик", value: "Да" },
-      { label: "Время на сайте", value: "1 мин" },
+      { label: "Время на сайте", value: "2 мин" },
       { label: "Подбор ключевых фраз", value: "Да" },
       { label: "Геотаргетинг", value: "Да" },
     ],
@@ -73,7 +73,7 @@ const Pricing = () => {
             <span className="text-gradient">Тарифы</span> продвижения
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Выберите подходящий план. Бесплатный тест ПФ перед заказом!
+            Бесплатный тест ПФ перед заказом. Выберите подходящий план
           </p>
         </motion.div>
 
@@ -87,8 +87,8 @@ const Pricing = () => {
               transition={{ delay: i * 0.1 }}
               className={`relative rounded-2xl border p-6 flex flex-col ${
                 plan.highlight
-                  ? "border-primary/40 bg-card glow-green"
-                  : "border-border bg-card/50"
+                  ? "border-primary/30 bg-card shadow-lg glow-primary"
+                  : "border-border bg-card shadow-sm"
               }`}
             >
               {plan.highlight && (
@@ -99,7 +99,7 @@ const Pricing = () => {
 
               <div className="flex items-center gap-3 mb-4">
                 <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                  plan.highlight ? "bg-primary/20" : "bg-secondary"
+                  plan.highlight ? "bg-primary/10" : "bg-muted"
                 }`}>
                   <plan.icon className={`w-5 h-5 ${plan.highlight ? "text-primary" : "text-muted-foreground"}`} />
                 </div>
@@ -129,8 +129,8 @@ const Pricing = () => {
                 href="#contact"
                 className={`w-full py-3 rounded-xl font-bold text-center transition-all ${
                   plan.highlight
-                    ? "bg-primary text-primary-foreground hover:scale-[1.02] glow-green"
-                    : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    ? "bg-primary text-primary-foreground hover:scale-[1.02] glow-primary"
+                    : "bg-muted text-foreground hover:bg-muted/70"
                 }`}
               >
                 Заказать
@@ -139,14 +139,13 @@ const Pricing = () => {
           ))}
         </div>
 
-        {/* Extras */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="mt-10 text-center text-sm text-muted-foreground"
         >
-          <p>Дополнительно: +100 кликов — 200₽ · +500 кликов — 1 000₽ · Правки не ограничены</p>
+          <p>Выполнение действий на сайте · Выбор расписания · Правки не ограничены</p>
         </motion.div>
       </div>
     </section>
