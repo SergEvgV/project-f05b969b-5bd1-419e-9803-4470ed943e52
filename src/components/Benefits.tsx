@@ -1,99 +1,77 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, ShieldCheck, Target, Users } from "lucide-react";
+import { Eye, Clock, Layers, MousePointerClick, ArrowDown, TrendingUp } from "lucide-react";
 
 const benefits = [
-  {
-    icon: Target,
-    title: "Кому подходит",
-    items: [
-      "Сайты с хорошей SEO-оптимизацией",
-      "Сайты в ТОП-30 выдачи Яндекса",
-      "Молодые сайты в ТОП-100",
-      "Сайт должен соответствовать интенту запроса",
-    ],
-  },
-  {
-    icon: ShieldCheck,
-    title: "Безопасность",
-    items: [
-      "Не отображается в Яндекс.Метрике",
-      "100% безопасная приватная технология",
-      "Гарантия возврата средств",
-      "60+ положительных отзывов",
-    ],
-  },
-  {
-    icon: Users,
-    title: "Что нужно для старта",
-    items: [
-      "URL сайта и регион продвижения",
-      "Список ключевых запросов в ТОП-30",
-      "Доступ к Яндекс.Метрике и Вебмастеру",
-    ],
-  },
+  { icon: MousePointerClick, title: "Рост CTR в выдаче", desc: "Увеличение кликабельности сайта по целевым запросам" },
+  { icon: Clock, title: "Время на сайте", desc: "Увеличение среднего времени визита до 2-4 минут" },
+  { icon: Layers, title: "Глубина просмотра", desc: "Просмотр до 5 страниц за одну сессию" },
+  { icon: ArrowDown, title: "Снижение отказов", desc: "Уменьшение показателя отказов для лучшего ранжирования" },
+  { icon: TrendingUp, title: "Рост позиций", desc: "Устойчивый рост в ТОП-10 по ключевым запросам" },
+  { icon: Eye, title: "Невидимо в Метрике", desc: "Технология не оставляет следов в системах аналитики" },
 ];
 
 const niches = [
-  "Металлопрокат", "Рекламные агентства", "Септики", "Сертификация",
-  "Электроинструмент", "Автоподбор", "Кухни на заказ", "Туризм",
-  "Строительство", "Медицина", "Юридические услуги",
+  "Стоматология", "Наркология", "Строительство", "Натяжные потолки",
+  "Юридические услуги", "Автоподбор", "Септики", "Металлопрокат",
+  "E-commerce", "Косметология", "Путешествия", "Недвижимость",
 ];
 
 const Benefits = () => {
   return (
-    <section className="py-24 relative">
-      <div className="container mx-auto px-6 relative z-10">
+    <section className="py-20 md:py-28 bg-muted/50">
+      <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
-            Проверено в <span className="text-gradient">разных нишах</span>
+          <h2 className="text-3xl md:text-4xl font-black mb-4 text-foreground">
+            Что вы <span className="text-gradient">получите</span>
           </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Комплексное улучшение поведенческих показателей для роста в поиске
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto mb-14">
           {benefits.map((b, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="rounded-2xl border border-border bg-card shadow-sm p-6"
+              transition={{ delay: i * 0.06 }}
+              className="flex items-start gap-4 p-5 rounded-xl border border-border bg-card"
             >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                 <b.icon className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-4">{b.title}</h3>
-              <ul className="space-y-3">
-                {b.items.map((item, j) => (
-                  <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <div>
+                <h4 className="font-bold text-foreground mb-1">{b.title}</h4>
+                <p className="text-sm text-muted-foreground">{b.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3"
+          className="text-center"
         >
-          {niches.map((n, i) => (
-            <span
-              key={i}
-              className="px-4 py-2 rounded-full border border-border bg-card text-sm text-muted-foreground shadow-sm"
-            >
-              {n}
-            </span>
-          ))}
+          <h3 className="font-bold text-foreground text-lg mb-4">Работаем с любыми тематиками</h3>
+          <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
+            {niches.map((niche, i) => (
+              <span
+                key={i}
+                className="px-4 py-2 rounded-full border border-border bg-card text-sm text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
+              >
+                {niche}
+              </span>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

@@ -6,48 +6,50 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 220 20% 12%;
+    --background: 210 20% 98%;
+    --foreground: 220 25% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 12%;
+    --card-foreground: 220 25% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 12%;
+    --popover-foreground: 220 25% 10%;
 
-    --primary: 14 97% 55%;
+    --primary: 213 94% 48%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 10% 94%;
-    --secondary-foreground: 220 20% 25%;
+    --secondary: 210 15% 93%;
+    --secondary-foreground: 220 25% 20%;
 
-    --muted: 220 10% 95%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 210 15% 96%;
+    --muted-foreground: 220 10% 46%;
 
-    --accent: 45 100% 50%;
-    --accent-foreground: 220 20% 12%;
+    --accent: 48 100% 50%;
+    --accent-foreground: 220 25% 10%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 10% 90%;
-    --input: 220 10% 90%;
-    --ring: 14 97% 55%;
+    --border: 210 15% 89%;
+    --input: 210 15% 89%;
+    --ring: 213 94% 48%;
 
     --radius: 0.75rem;
 
     --chart-up: 145 60% 42%;
     --chart-down: 0 72% 50%;
-    --glow: 14 97% 55%;
+    --glow: 213 94% 48%;
+
+    --hero-bg: 213 60% 95%;
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 20% 12%;
-    --sidebar-primary: 14 97% 55%;
+    --sidebar-foreground: 220 25% 10%;
+    --sidebar-primary: 213 94% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 10% 95%;
-    --sidebar-accent-foreground: 220 20% 12%;
-    --sidebar-border: 220 10% 90%;
-    --sidebar-ring: 14 97% 55%;
+    --sidebar-accent: 210 15% 96%;
+    --sidebar-accent-foreground: 220 25% 10%;
+    --sidebar-border: 210 15% 89%;
+    --sidebar-ring: 213 94% 48%;
   }
 }
 
@@ -65,26 +67,52 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(14 97% 55%), hsl(30 95% 55%));
+    background-image: linear-gradient(135deg, hsl(213 94% 48%), hsl(230 80% 55%));
+  }
+
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(48 100% 50%), hsl(35 95% 50%));
   }
 
   .glow-primary {
-    box-shadow: 0 4px 20px -4px hsl(14 97% 55% / 0.25);
+    box-shadow: 0 4px 24px -4px hsl(213 94% 48% / 0.3);
+  }
+
+  .glow-accent {
+    box-shadow: 0 4px 24px -4px hsl(48 100% 50% / 0.4);
   }
 
   .glow-border {
-    border: 1px solid hsl(14 97% 55% / 0.2);
-    box-shadow: 0 2px 12px hsl(14 97% 55% / 0.06);
+    border: 1px solid hsl(213 94% 48% / 0.15);
+    box-shadow: 0 2px 12px hsl(213 94% 48% / 0.06);
   }
 
   .bg-grid {
     background-image: 
-      linear-gradient(hsl(220 10% 90% / 0.6) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(220 10% 90% / 0.6) 1px, transparent 1px);
+      linear-gradient(hsl(210 15% 89% / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(210 15% 89% / 0.5) 1px, transparent 1px);
     background-size: 60px 60px;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(213 60% 95%) 0%, hsl(210 20% 98%) 50%, hsl(48 80% 96%) 100%);
+  }
+
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px -8px hsl(213 94% 48% / 0.12);
   }
 
   .font-mono {
     font-family: 'JetBrains Mono', monospace;
+  }
+
+  .section-divider {
+    background: linear-gradient(90deg, transparent, hsl(210 15% 89%), transparent);
+    height: 1px;
   }
 }

@@ -1,79 +1,84 @@
 import { motion } from "framer-motion";
-import { Search, MousePointerClick, TrendingUp, BarChart3 } from "lucide-react";
+import { MessageCircle, Search, Rocket, BarChart3, Settings, Trophy } from "lucide-react";
 
 const steps = [
   {
-    icon: Search,
-    title: "Анализ запросов",
-    description: "Подбираем ключевые фразы вашего сайта в ТОП-30 Яндекса — от 100 до 10 000 фраз",
+    icon: MessageCircle,
+    num: "01",
+    title: "Пишете нам",
+    description: "Расскажите про ваш сайт и цели. Предложим бесплатный тест на 3-5 дней.",
   },
   {
-    icon: MousePointerClick,
-    title: "Поведенческие сигналы",
-    description: "Ежедневные переходы из поисковой выдачи с имитацией реального пользовательского поведения",
+    icon: Search,
+    num: "02",
+    title: "Анализ сайта",
+    description: "Изучаем текущие позиции, конкурентов и подбираем эффективные ключевые запросы.",
+  },
+  {
+    icon: Rocket,
+    num: "03",
+    title: "Бесплатный тест",
+    description: "Запускаем накрутку ПФ бесплатно. Вы видите рост позиций и убеждаетесь в результате.",
+  },
+  {
+    icon: Settings,
+    num: "04",
+    title: "Настройка кампании",
+    description: "Определяем оптимальный пакет, настраиваем глубину просмотра, время и геотаргетинг.",
   },
   {
     icon: BarChart3,
-    title: "Глубина взаимодействия",
-    description: "Просмотр до 5 страниц, время на сайте до 4 минут, мобильный и десктопный трафик",
+    num: "05",
+    title: "Запуск продвижения",
+    description: "Плавная, естественная имитация поведения реальных пользователей на вашем сайте.",
   },
   {
-    icon: TrendingUp,
-    title: "Рост позиций",
-    description: "Улучшение видимости по НЧ фразам подтягивает ВЧ запросы — сайт растёт в ТОП",
+    icon: Trophy,
+    num: "06",
+    title: "ТОП позиции!",
+    description: "Рост трафика, новые клиенты и заявки. Поддержка и удержание позиций.",
   },
 ];
 
 const HowItWorks = () => {
   return (
-    <section id="how" className="py-24 relative">
-      <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="how" className="py-20 md:py-28">
+      <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
-            Как <span className="text-gradient">это работает</span>
+          <h2 className="text-3xl md:text-4xl font-black mb-4 text-foreground">
+            Этапы <span className="text-gradient">работы</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Приватная технология безопасного продвижения через улучшение поведенческих факторов
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Начинаем с бесплатного теста — убедитесь в результате перед оплатой
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {steps.map((step, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group relative rounded-2xl border border-border bg-card shadow-sm p-6 hover:shadow-md transition-all duration-300"
+              transition={{ delay: i * 0.08 }}
+              className="relative p-6 rounded-2xl border border-border bg-card"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
-                <step.icon className="w-6 h-6 text-primary" />
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-xs font-mono font-bold text-primary/50">{step.num}</span>
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <step.icon className="w-5 h-5 text-primary" />
+                </div>
               </div>
-              <div className="font-mono text-xs text-muted-foreground mb-2">0{i + 1}</div>
-              <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
+              <h3 className="font-bold text-foreground text-lg mb-2">{step.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12 rounded-2xl border border-primary/15 bg-primary/5 p-6 max-w-2xl mx-auto text-center"
-        >
-          <p className="text-sm text-muted-foreground">
-            <span className="text-primary font-semibold">Важно:</span> В Яндекс.Метрике переходы не отображаются, 
-            но увеличиваются реальные переходы людей из поиска. Сайт должен соответствовать интенту поисковых фраз.
-          </p>
-        </motion.div>
       </div>
     </section>
   );
