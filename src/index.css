@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 25% 10%;
 
-    --primary: 213 94% 48%;
+    --primary: 190 61% 39%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 15% 93%;
@@ -32,24 +32,24 @@
 
     --border: 210 15% 89%;
     --input: 210 15% 89%;
-    --ring: 213 94% 48%;
+    --ring: 190 61% 39%;
 
     --radius: 0.75rem;
 
     --chart-up: 145 60% 42%;
     --chart-down: 0 72% 50%;
-    --glow: 213 94% 48%;
+    --glow: 190 61% 39%;
 
-    --hero-bg: 213 60% 95%;
+    --hero-bg: 190 40% 95%;
 
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 220 25% 10%;
-    --sidebar-primary: 213 94% 48%;
+    --sidebar-primary: 190 61% 39%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 210 15% 96%;
     --sidebar-accent-foreground: 220 25% 10%;
     --sidebar-border: 210 15% 89%;
-    --sidebar-ring: 213 94% 48%;
+    --sidebar-ring: 190 61% 39%;
   }
 }
 
@@ -67,7 +67,7 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(213 94% 48%), hsl(230 80% 55%));
+    background-image: linear-gradient(135deg, hsl(190 61% 39%), hsl(195 55% 32%));
   }
 
   .text-gradient-accent {
@@ -76,7 +76,7 @@
   }
 
   .glow-primary {
-    box-shadow: 0 4px 24px -4px hsl(213 94% 48% / 0.3);
+    box-shadow: 0 4px 24px -4px hsl(190 61% 39% / 0.3);
   }
 
   .glow-accent {
@@ -84,8 +84,8 @@
   }
 
   .glow-border {
-    border: 1px solid hsl(213 94% 48% / 0.15);
-    box-shadow: 0 2px 12px hsl(213 94% 48% / 0.06);
+    border: 1px solid hsl(190 61% 39% / 0.15);
+    box-shadow: 0 2px 12px hsl(190 61% 39% / 0.06);
   }
 
   .bg-grid {
@@ -96,7 +96,7 @@
   }
 
   .hero-gradient {
-    background: linear-gradient(135deg, hsl(213 60% 95%) 0%, hsl(210 20% 98%) 50%, hsl(48 80% 96%) 100%);
+    background: linear-gradient(135deg, hsl(190 40% 95%) 0%, hsl(210 20% 98%) 50%, hsl(48 80% 96%) 100%);
   }
 
   .card-hover {
@@ -104,7 +104,7 @@
   }
   .card-hover:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px -8px hsl(213 94% 48% / 0.12);
+    box-shadow: 0 12px 40px -8px hsl(190 61% 39% / 0.12);
   }
 
   .font-mono {
