@@ -15,7 +15,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-accent/30 mb-6">
-              <span className="text-sm font-semibold text-accent-foreground">🎁 Бесплатный тест — 3-5 дней</span>
+              <span className="text-sm font-semibold text-accent-foreground">🎁 Бесплатный тест — 5-7 дней</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-6">
