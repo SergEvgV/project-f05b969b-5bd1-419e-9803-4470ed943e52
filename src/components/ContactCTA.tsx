@@ -20,16 +20,16 @@ const ContactCTA = () => {
               Бесплатный тест ПФ
             </h2>
             <p className="text-muted-foreground text-lg mb-3 max-w-lg mx-auto">
-              Протестируем накрутку поведенческих факторов на вашем сайте бесплатно 3-5 дней. 
+              Протестируем накрутку поведенческих факторов на вашем сайте бесплатно 5-7 дней. 
               Убедитесь в результате перед заказом.
             </p>
             <p className="text-sm text-muted-foreground mb-8">
-              Напишите нам — ответим в течение 30 минут
+              Напишите нам — ответим в течение 15 минут
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="https://t.me/"
+                href="https://t.me/Max_Coder_bot"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-bold text-lg hover:opacity-90 transition-all glow-primary"
