@@ -47,8 +47,8 @@ const Contacts = () => {
               className="md:col-span-2 space-y-6"
             >
               {[
-                { icon: MessageCircle, title: "Telegram", value: "@magic_pf", href: "https://t.me/" },
-                { icon: Mail, title: "Email", value: "info@magic-pf.ru", href: "mailto:info@magic-pf.ru" },
+                { icon: MessageCircle, title: "Telegram", value: "пф-на-рф", href: "https://t.me/Max_Coder_bot" },
+                { icon: Mail, title: "Email", value: "gde@pf-na.ru", href: "mailto:gde@pf-na.ru" },
                 { icon: MapPin, title: "Режим работы", value: "Пн–Пт, 9:00–19:00 МСК", href: undefined },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 p-5 rounded-xl border border-border bg-card">
